@@ -1,5 +1,4 @@
-# cargoidentification
-DIN EN ISO 6346 Standard Cargo Identification Verification Algorithm:
+# DIN EN ISO 6346 Standard Cargo Identification Verification Algorithm:
 
 Based on the following requirements:
 
