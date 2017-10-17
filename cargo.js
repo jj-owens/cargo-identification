@@ -1,5 +1,5 @@
 function cargoNumberValidate(string) {
-    if (typeof(string) != "String"){
+    if (typeof(string) != "string"){
         console.log("Input must be a string!")
         return "Input must be a string!";
     } else {
@@ -69,4 +69,4 @@ function cargoNumberValidate(string) {
     }
 }
 
-cargoNumberValidate(123);
+cargoNumberValidate("SUDU3070079");
