@@ -1,6 +1,6 @@
 function cargoNumberValidate(string) {
      //print the string used
-     console.log(string);
+     console.log('The input container id to be validated is: ' + string);
     //set variables to be validated
     var owner_code = string.split('').splice(0, 3);
     var product_group_code = string.split('').splice(3, 1);
@@ -9,11 +9,7 @@ function cargoNumberValidate(string) {
     var registration_number_validate = /^[0-9]+$/;
     var check_digit = string.split('').splice(-1, 1).join('');
     var reg = string.split(',').splice(0, 10);
-    console.log('the reg is ' + reg);
-    console.log(owner_code);
-    console.log(product_group_code);
-    console.log(registration_number);
-    console.log(registration_number.length);
+  
     //validate the string is 11 places long, if not send error message, can change this to a switch statement?
     if (string.length !== 11){
         console.log('invalid string length, please check the container id and try again.');
@@ -35,7 +31,11 @@ function cargoNumberValidate(string) {
     } else {
         console.log('registration number is must be all numbers and be 6 digits long, zeros may proceed a number to make it 6 digits in length.')
     }
+
+    //set variable to contain calculated number to check against the check digit.
     var check_calculated = registrationCalc(string); 
+
+    //calculate the correct check digit value
     function registrationCalc(string) {
         console.log(string + 'here is the strong')
         //set variables for calculations
@@ -75,7 +75,7 @@ function cargoNumberValidate(string) {
     }
 
 
-    //check if the check digit is valid after calculations
+    //see if the calculated check digit matches the input check digit and pass or fail validation.
     if(check_digit == check_calculated){
         console.log('Congratulations, this is a valid container id!');
     } else {
