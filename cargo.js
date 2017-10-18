@@ -8,11 +8,13 @@ function cargoNumberValidate(string) {
     const registration_number_validate = /^[0-9]+$/;
     const product_group_validate = /[J|U|Z]/;
     const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-    const values = [10,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,28,29,30,31,32,34,35,36,37,38]
+    const values = [10,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,28,29,30,31,32,34,35,36,37,38];
     const stringarr = data.toUpperCase().split('');
     var owner_code = stringarr.slice(1, 4);
     var product_group_code = stringarr.slice(3,4);
     var registration_number = stringarr.slice(4, 10);
+    const test_reg = registration_number_validate.test(registration_number.join(''));
+    const test_product = product_group_validate.test(product_group_code.join(''));
     var check_digit = stringarr.slice(-1).join('');
     var aprefix = stringarr.slice(0, 4);
     var check_calculated = registrationCalc(data); 
@@ -20,10 +22,10 @@ function cargoNumberValidate(string) {
     if (data.length !== 11) {
         return "Invalid string length, please check the container id and try again.";
     } 
-    if (product_group_validate.test(product_group_code.join('')) === false){
+    if (test_product === false){
         return "Product group code must be a J, U, or Z..";
     }
-    if (registration_number_validate.test(registration_number.join('')) !== true || registration_number.length !== 6){
+    if (test_reg !== true || registration_number.length !== 6){
         return 'Registration number must be all numbers and be 6 digits long. Zeros may proceed a number to make it 6 digits in length..';
     }
 
