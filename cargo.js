@@ -18,7 +18,7 @@ function cargoNumberValidate(string) {
     var check_digit = stringarr.slice(-1).join('');
     var aprefix = stringarr.slice(0, 4);
     var check_calculated = registrationCalc(data); 
-  
+
     if (data.length !== 11) {
         return "Invalid string length, please check the container id and try again.";
     } 
@@ -52,7 +52,6 @@ function cargoNumberValidate(string) {
     }
 
     if (check_digit == check_calculated) {
-        console.log("success");
         return 'Check digit matches calculation. Congratulations, this is a valid container id!';
     } else {
         return 'Unfotunately, the container id did not pass validation. Check console log for errors.';

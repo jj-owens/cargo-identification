@@ -5,7 +5,11 @@ Based on the following requirements:
 http://www.containerhandbuch.de/chb_e/stra/index.html?/chb_e/stra/stra_03_03_00.html
 
 INSTRUCTIONS:
-Clone repo
-cd into `cargo-identification` directory.
-edit cargo.js line 90 to reflect container id to be validated.
-run `node cargo.js` from command line.
+
+1. Clone repository
+
+2. cd into `cargo-identification` directory.
+
+3. edit cargo.js function `cargoNumberValidate("[string]")` with string to be validated.
+
+4. save, exit, and run `node cargo.js` from terminal window to validate cargo identification string.
