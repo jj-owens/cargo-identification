@@ -1,7 +1,7 @@
 function cargoNumberValidate(string) {
     const data = string;
-    if (typeof(string) != "string"){
-        console.log("Input must be a string!")
+    if (typeof(string) !== "string"){
+        console.log("Input must be a string!");
         return "Input must be a string!";
     }
     
@@ -10,7 +10,6 @@ function cargoNumberValidate(string) {
     const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
     const values = [10,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,28,29,30,31,32,34,35,36,37,38];
     const stringarr = data.toUpperCase().split('');
-    var owner_code = stringarr.slice(1, 4);
     var product_group_code = stringarr.slice(3,4);
     var registration_number = stringarr.slice(4, 10);
     const test_reg = registration_number_validate.test(registration_number.join(''));
@@ -33,7 +32,7 @@ function cargoNumberValidate(string) {
         const powers = [1,2,4,8,16,32,64,128,256,512];
         let alpha_calc = aprefix.map((element, index) => {
             return values[alphabet.indexOf(element)] * powers[index];
-        });
+        })
  
         let digit_calc = registration_number.map((element, index) => {
             return element * powers[index + 4];
@@ -54,7 +53,7 @@ function cargoNumberValidate(string) {
     if (check_digit == check_calculated) {
         return 'Check digit matches calculation. Congratulations, this is a valid container id!';
     } else {
-        return 'Unfotunately, the container id did not pass validation. Check console log for errors.';
+        return 'Unfortunately, the container id did not pass validation. Check console log for errors.';
     }
 }
 
